@@ -26,26 +26,26 @@ function setup() {
   background(220);
 
 
-// 2b.4 pull random item from array
+  // 2b.4 pull random item from array
   // console.log(random(5));
   // console.log(icecream[int(random(icecream.length))].name);
   // console.log(icecream[randomIndex].name);
   // console.log(icecream[randomIndex].name);
 
-// 2b.3 array of objects
-  //  console.log(icecream[1].color);
+  // 2b.3 array of objects
+  // console.log(icecream[1].color);
 
-// 2b.2 Methods to Arrays
-  //  console.log("initial array is ")
-  //  console.log(icecream);
+  // 2b.2 methods to arrays
+  // console.log("initial array is ")
+  // console.log(icecream);
 
-  //  icecream.shift();
-  //  console.log("array after shift")
-  //  console.log(icecream);
+  // icecream.shift();
+  // console.log("array after shift")
+  // console.log(icecream);
 
-  //  icecream.unshift("mango");
-  //  console.log("array after unshift")
-  //  console.log(icecream);
+  // icecream.unshift("mango");
+  // console.log("array after unshift")
+  // console.log(icecream);
 
 }
 
