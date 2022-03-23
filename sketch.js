@@ -1,75 +1,61 @@
-let icecreamnames = ['chocolate', 'vanilla', 'butter pecan', 'strawberry', 'neapolitan', 'mint chocolate chip'];
-let selfcare = ['call a friend', 'listen to a song you love', 'smell some flowers', 'try some gentle yoga', 'watch the sunset', 'sleep-in'];
-
-let img;
-let myFont;
-
+let selfcare = ['calling a friend', 'listening to a song you love', 'smelling some flowers', 'trying some gentle yoga', 'watching the sunset', 'sleeping-in'];
 let icecreamran;
 let selfcareran;
-
-let words;
-
 let icecreams = []
-
+let img;
+let myFont;
 let button;
+let words;
 let cnv;
 
-function preload(){
-
-myFont = loadFont('assets/VCR_OSD_MONO_1.001.ttf')
-
-  img = loadImage('pixelbackground.jpg');
-
-for (let i = 0; i <= 5; i++){
-  icecreams[i] = loadImage('assets/icecream_${i}.jpg')
-}
+function preload() {
+  myFont = loadFont('assets/VCR_OSD_MONO_1.001.ttf')
+  img = loadImage('pixelbackground.jpeg');
+  for (let i = 0; i <= 5; i++) {
+    icecreams[i] = loadImage('assets/icecream_' + [i] + '.jpeg')
+  }
 }
 
 function setup() {
-  cnv = createCanvas(650, 450);
-  cnv.parent('#canvasDiv');
-  image(img, 0,0);
-    textFont(myFont);
-    intText();
-    textSize(30);
-    console.log(icecreams[int(random(icecreams.length))]);
-    console.log(selfcare.length);
-
-    button = select('#selfcareact');
-    button.position(290,500);
-    button.mousePressed(buttonPressed);
-    button.class('selfcareButton');
+  cnv = createCanvas(960, 540);
+  cnv.parent('#controlsDiv');
+  image(img, 0, 0);
+  textFont(myFont);
+  inText();
+  textSize(30);
+  console.log(icecreams[int(random(icecreams.length))]);
+  console.log(selfcare.length);
+  button = select('#selfcareact');
+  button.position(720, 495);
+  button.mousePressed(buttonPressed);
+  button.class('selfcareButton');
 }
 
-function draw() {
-}
+function draw() {}
 
-function buttonPressed(){
+function buttonPressed() {
   selfcareran = int(random(selfcare.length));
-  words = ' ' + selfcare[selfcareran] + '-';
-  console.log(words);
+  words = '' + selfcare[selfcareran] + '-';
 }
 
-function mousePressed(){
+function mousePressed() {
   icecreamran = int(random(icecreams.length));
   statement();
-
-  image(icecreams[icecreamran], width*0.33, height*0.27, 290, 230);
+  image(icecreams[icecreamran], width * 0.5, height * 0.3, 215, 215);
 }
 
 function inText() {
-  fill(156, 129, 67);
-  textAlign(CENTER);
-  textSize(20);
-  text('Click until you see your favorite ice cream flavor', width*0.4, height*0.1);
+  fill(251, 255, 189);
+  textAlign(LEFT);
+  textSize(28);
+  text('Click until you see your favorite ice cream flavor', width * 0.1, height * 0.23);
 }
 
 function statement() {
-  image(img, 0,0);
+  image(img, 0, 0);
   inText();
-  fill(156,129,67);
-  textAlign(CENTER);
-  textSize(25);
-  text('You should:', width*0.5,height*0.2);
-  text(words,width*0.5, height*0.75);
+  fill(247, 231, 231);
+  textSize(23);
+  text('Treat yourself to:', width * 0.23, height * 0.4);
+  text(words, width * 0.5, height * 0.75);
 }
